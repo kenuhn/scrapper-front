@@ -63,7 +63,7 @@ export class OfferApi {
         const token = localStorage.getItem("token").replace(/^['"]|['"]$/g, "");
 
         const response = await fetch(
-          "http://127.0.0.1:8000/api/favorite/",
+          "http://127.0.0.1:8000/api/user_jobs/favorite/",
           {
             method: "POST",
             headers: {

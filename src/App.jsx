@@ -26,6 +26,7 @@ function App() {
 
   useEffect(() => {
     const userId = decodeToken();
+    console.log("userId", userId);
     if (userId) {
       setToken(userId);
       setIsAuth(true);
@@ -33,6 +34,8 @@ function App() {
       setToken(null);
     }
   }, []);
+
+  console.log("isAuth", isAuth);
   return (
     <>
       <tokenContext.Provider value={{ token: token, setToken: setToken }}>

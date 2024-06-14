@@ -22,7 +22,7 @@ const CardItem = ({ title, link, description, company }) => {
   const user_id = token.user_id;
   const handleAddJob = () => {
     offerApi.addJobFavorite({
-      id: user_id,
+      id_user: user_id,
       job_title: title,
       link,
       description,
@@ -40,7 +40,7 @@ const CardItem = ({ title, link, description, company }) => {
           boxShadow: 3,
           width: "100%",
         }}
-        onClick={handleOpen}
+
       >
         <CardContent>
           <FormControl fullWidth>
@@ -74,6 +74,7 @@ const CardItem = ({ title, link, description, company }) => {
             variant="contained"
             color="primary"
             sx={{ marginRight: "10px" }}
+            onClick={handleOpen}
           >
             View Description
           </Button>
