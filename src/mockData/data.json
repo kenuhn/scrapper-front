@@ -1,0 +1,26 @@
+[
+  {
+    "Titles": "Software Engineer",
+    "Links": "https://example.com/software-engineer",
+    "Descriptions": "Developed and maintained web applications using React.js and Node.js.",
+    "Companies": "Tech Solutions Inc."
+  },
+  {
+    "Titles": "Data Analyst",
+    "Links": "https://example.com/data-analyst",
+    "Descriptions": "Analyzed large datasets to provide insights for business decisions.",
+    "Companies": "Data Insights Co."
+  },
+  {
+    "Titles": "Product Manager",
+    "Links": "https://example.com/product-manager",
+    "Descriptions": "Led product development from conception to launch, collaborating with engineering and design teams.",
+    "Companies": "Product Innovations Ltd."
+  },
+  {
+    "Titles": "Marketing Specialist",
+    "Links": "https://example.com/marketing-specialist",
+    "Descriptions": "Executed digital marketing campaigns and managed social media presence.",
+    "Companies": "Market Trends Agency"
+  }
+]
