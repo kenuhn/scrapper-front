@@ -8,7 +8,7 @@ export class OfferApi {
       if (existApi) {
         const token = localStorage.getItem("token").replace(/^['"]|['"]$/g, "");
         const response = await fetch(
-          "https://bzckend-crawler-job.vercel.app/api/crawl/",
+          "http://127.0.0.1:8000/api/crawl/",
           {
             method: "POST",
             headers: {
@@ -36,7 +36,7 @@ export class OfferApi {
         const token = localStorage.getItem("token").replace(/^['"]|['"]$/g, "");
 
         const response = await fetch(
-          "https://bzckend-crawler-job.vercel.app/api/all/",
+          "http://127.0.0.1:8000/api/all/",
           {
             method: "GET",
             headers: {
@@ -63,7 +63,7 @@ export class OfferApi {
         const token = localStorage.getItem("token").replace(/^['"]|['"]$/g, "");
 
         const response = await fetch(
-          "https://bzckend-crawler-job.vercel.app/api/favorite/",
+          "http://127.0.0.1:8000/api/favorite/",
           {
             method: "POST",
             headers: {
@@ -91,7 +91,7 @@ export class OfferApi {
         const token = localStorage.getItem("token").replace(/^['"]|['"]$/g, "");
 
         const response = await fetch(
-          "https://bzckend-crawler-job.vercel.app/api/favorite/",
+          "http://127.0.0.1:8000/api/favorite/",
           {
             method: "GET",
             headers: {

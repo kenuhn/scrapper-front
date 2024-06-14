@@ -3,7 +3,7 @@ export class UserApi {
     try {
       console.log(userDTO);
       const response = await fetch(
-        "https://bzckend-crawler-job.vercel.app/api/token/",
+        "http://127.0.0.1:8000/api/token/",
         {
           method: "POST",
           headers: {
@@ -23,7 +23,7 @@ export class UserApi {
     try {
       console.log("userDTO", userDTO);
       const response = await fetch(
-        "https://bzckend-crawler-job.vercel.app/api/register/",
+        "http://127.0.0.1:8000/api/register/",
         {
           method: "POST",
           headers: {
