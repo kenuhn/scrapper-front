@@ -14,23 +14,36 @@ export const crawlContext = createContext({
   setSearch: () => {},
 });
 
+export const tokenContext = createContext({
+  token: "",
+  setToken: () => {},
+});
+
 function App() {
   const [isAuth, setIsAuth] = useState(false);
   const [search, setSearch] = useState([]);
+  const [token, setToken] = useState("");
+
   useEffect(() => {
     const userId = decodeToken();
-    console.log("user_id", userId.userId);
     if (userId) {
+      setToken(userId);
       setIsAuth(true);
+    } else {
+      setToken(null);
     }
   }, []);
   return (
     <>
-      <authContext.Provider value={{ isAuth: isAuth, setIsAuth: setIsAuth }}>
-        <crawlContext.Provider value={{ search: search, setSearch: setSearch }}>
-          <Outlet />
-        </crawlContext.Provider>
-      </authContext.Provider>
+      <tokenContext.Provider value={{ token: token, setToken: setToken }}>
+        <authContext.Provider value={{ isAuth: isAuth, setIsAuth: setIsAuth }}>
+          <crawlContext.Provider
+            value={{ search: search, setSearch: setSearch }}
+          >
+            <Outlet />
+          </crawlContext.Provider>
+        </authContext.Provider>
+      </tokenContext.Provider>
 
       {isAuth && <Sidebar />}
     </>

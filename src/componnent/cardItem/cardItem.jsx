@@ -10,15 +10,16 @@ import {
 } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import PropTypes from "prop-types";
-import { useState } from "react";
-import { decodeToken } from "../../service/decodeToken";
+import { useContext, useState } from "react";
+import { tokenContext } from "../../App";
 import { OfferApi } from "../../service/offerApi";
 const CardItem = ({ title, link, description, company }) => {
   const [open, setOpen] = useState(false);
   const offerApi = new OfferApi();
+  const token = useContext(tokenContext);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const { user_id } = decodeToken();
+  const user_id = token.user_id;
   const handleAddJob = () => {
     offerApi.addJobFavorite({
       id: user_id,

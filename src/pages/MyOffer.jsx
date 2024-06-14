@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { tokenContext } from "../App";
 import CardGrid from "../componnent/cardGrid/cardGrid";
-import { decodeToken } from "../service/decodeToken";
 import { OfferApi } from "../service/offerApi";
-
 export const MyOffer = () => {
-  const { user_id } = decodeToken();
+  const { user_id } = useContext(tokenContext);
   const [listMyOffer, setListMyOffer] = useState([]);
   const offerApi = new OfferApi();
   useEffect(() => {

@@ -1,7 +1,9 @@
-import { jwtDecode } from "jwt-decode";
-
 export const decodeToken = () => {
-  const objectToken = localStorage.getItem("token").replace(/^['"]|['"]$/g, "");
+  let objectToken = localStorage.getItem("token");
+  if (objectToken) {
+    objectToken = objectToken.replace(/^['"]|['"]$/g, "");
+  }
+
   console.log(objectToken);
-  return jwtDecode(objectToken);
+  return null;
 };
